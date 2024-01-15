@@ -18,7 +18,7 @@ channels = 2  # nb of dimensions of time series
 X = np.random.rand(batch, stream, channels)
 
 sig_level = 5
-SX = iisignature.sig(Xs, sig_level)
+SX = iisignature.sig(X, sig_level)
 
 n_components = 6  # nb of Principal Geodesics
 
