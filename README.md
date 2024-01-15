@@ -1,6 +1,7 @@
 # Principal Geodesic Analysis for time series encoded with signature features
 
-Reference: <https://hal.science/hal-04392568>
+
+Reference: Raphael Mignot, Marianne Clausel, Konstantin Usevich. Principal Geodesic Analysis for time series encoded with signature features. 2024. (hal-04392568) <https://hal.science/hal-04392568>
 
 ## How to use
 
