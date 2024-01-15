@@ -1,5 +1,7 @@
 # Principal Geodesic Analysis for time series encoded with signature features
 
+Reference: <https://hal.science/hal-04392568>
+
 ## How to use
 
 ```python
