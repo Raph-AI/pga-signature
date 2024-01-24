@@ -37,25 +37,24 @@ from pga import recenter_group_elems
 from pga import d2h
 from utils import depth_inds
 
-inds = depth_inds(channels, depth)
+inds = depth_inds(sig_level, depth)
 projections = {} 
 projections_t = {}
 for K in range(n_components):
     optimized_v = principal_directions[K]
     optimized_v_t = t_principal_directions[K]
-    SXk = recenter_group_elems(SX, channels, depth, inds)
+    SXk = recenter_group_elems(SX, sig_level, depth, inds)
     tis = []
     tis_t = []
     for i in range(len(SX)):
-        d2h_t = lambda t: d2h(t, optimized_v, SXk[i], depth, channels)
+        d2h_t = lambda t: d2h(t, optimized_v, SXk[i], depth, sig_level)
         initial_guess_t = 0.
         optimized_ti = fsolve(d2h_t, initial_guess_t)[0]
         tis.append(optimized_ti)
-        d2h_t = lambda t: d2h(t, optimized_v_t, SXk[i], depth, channels)
+        d2h_t = lambda t: d2h(t, optimized_v_t, SXk[i], depth, sig_level)
         initial_guess_t = 0.
         optimized_ti_t = fsolve(d2h_t, initial_guess_t)[0]
         tis_t.append(optimized_ti_t)
-        # sig_proj = group_exp(optimized_ti*optimized_v, depth, inds)
     tis = np.array(tis)
     tis_t = np.array(tis_t)
     projections[K] = tis
