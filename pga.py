@@ -94,8 +94,6 @@ def recenter_group_elems(SX, channels, depth, inds):
 def pga(SX, channels, depth, n_components):
     batch = len(SX)
     inds = depth_inds(channels, depth)
-    np.random.seed(1206)
-
     principal_directions = []  
     SXk = recenter_group_elems(SX, channels, depth, inds)
 
